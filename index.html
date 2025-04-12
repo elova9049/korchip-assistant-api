@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Korchip | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 공통 헤더 -->
+  <div id="header-placeholder"></div>
+
+  <!-- 메인 콘텐츠 -->
+  <section class="hero">
+    <h1>Powering the Future</h1>
+    <p>Advanced Supercapacitors and Lithium Rechargeable Solutions</p>
+    <div class="keywords">
+      <span>Supercapacitor</span>
+      <span>·</span>
+      <span>Lithium Rechargeable</span>
+      <span>·</span>
+      <span>Support</span>
+    </div>
+  </section>
+
+  <section class="menu">
+    <div class="card">
+      <a href="products.html">
+        <div class="card-icon">📦</div>
+        <div class="card-title">Product List</div>
+        <p>Explore our full range of energy solutions</p>
+      </a>
+    </div>
+    <div class="card">
+      <a href="calculators.html">
+        <div class="card-icon">🧮</div>
+        <div class="card-title">Calculators</div>
+        <p>Find the right capacitor for your needs</p>
+      </a>
+    </div>
+    <div class="card">
+      <a href="contact.html">
+        <div class="card-icon">📧</div>
+        <div class="card-title">Contact Us</div>
+        <p>We're here to help with your inquiries</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- 공통 푸터 -->
+  <div id="footer-placeholder"></div>
+
+  <!-- 헤더 & 푸터 불러오기 -->
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('header-placeholder').innerHTML = data)
+      .catch(err => console.error('Header load error:', err));
+
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer-placeholder').innerHTML = data)
+      .catch(err => console.error('Footer load error:', err));
+  </script>
+</body>
+</html>
