@@ -1,7 +1,15 @@
 const { Configuration, OpenAIApi } = require("openai");
 
 module.exports = async (req, res) => {
+  if (req.method !== "POST") {
+    return res.status(405).send("Only POST requests allowed");
+  }
+
   const { message } = req.body;
+
+  if (!message) {
+    return res.status(400).json({ error: "Missing 'message' in request body." });
+  }
 
   const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
@@ -15,10 +23,7 @@ module.exports = async (req, res) => {
       messages: [
         {
           role: "system",
-          content: `
-          You are Korchip Assistant, a helpful technical bot for supercapacitors.
-          Only answer questions about Korchip's products, calculators, or technologies.
-          Politely decline other topics.`,
+          content: "You are Korchip Assistant, a helpful bot for supercapacitor users.",
         },
         { role: "user", content: message },
       ],
@@ -26,6 +31,7 @@ module.exports = async (req, res) => {
 
     res.status(200).json({ reply: completion.data.choices[0].message.content });
   } catch (error) {
-    res.status(500).json({ error: "GPT Error", details: error.message });
+    console.error("OpenAI API error:", error.message);
+    res.status(500).json({ error: "Failed to get response from GPT", detail: error.message });
   }
 };
