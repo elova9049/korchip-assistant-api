@@ -64,5 +64,49 @@
       .then(data => document.getElementById('footer-placeholder').innerHTML = data)
       .catch(err => console.error('Footer load error:', err));
   </script>
+    <!-- Korchip Assistant Chatbot -->
+  <div id="chat-container" style="position: fixed; bottom: 20px; right: 20px; width: 320px; max-height: 500px; background: white; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.1); overflow: hidden; font-family: 'Poppins', sans-serif; z-index: 999;">
+    <div style="background-color: #007BFF; color: white; padding: 12px; font-weight: 600;">
+      💬 Korchip Assistant
+    </div>
+    <div id="chat-messages" style="padding: 12px; height: 250px; overflow-y: auto; font-size: 14px;"></div>
+    <div style="padding: 12px; border-top: 1px solid #eee;">
+      <input id="user-input" type="text" placeholder="Ask something..." style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 8px;" />
+    </div>
+  </div>
+
+  <script>
+    const input = document.getElementById('user-input');
+    const chatBox = document.getElementById('chat-messages');
+
+    input.addEventListener('keypress', async function(e) {
+      if (e.key === 'Enter' && input.value.trim()) {
+        const userMsg = input.value.trim();
+        chatBox.innerHTML += `<div><strong>You:</strong> ${userMsg}</div>`;
+        input.value = '';
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+        try {
+          const res = await fetch('/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: userMsg })
+          });
+
+          const data = await res.json();
+          if (data.reply) {
+            chatBox.innerHTML += `<div><strong>Bot:</strong> ${data.reply}</div>`;
+          } else {
+            chatBox.innerHTML += `<div><strong>Bot:</strong> Sorry, something went wrong.</div>`;
+          }
+        } catch (err) {
+          console.error(err);
+          chatBox.innerHTML += `<div><strong>Bot:</strong> Error connecting to server.</div>`;
+        }
+
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }
+    });
+  </script>
 </body>
 </html>
