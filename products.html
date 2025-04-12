@@ -6,6 +6,32 @@
   <title>Products | Korchip</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+   <style>
+    #category-filter button {
+      margin: 0 6px;
+      padding: 8px 18px;
+      border: 1px solid #ccc;
+      background: #fff;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #333;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+    #category-filter button:hover {
+      background-color: #007BFF;
+      color: #fff;
+      border-color: #007BFF;
+    }
+
+    #category-filter button.active {
+      background-color: #007BFF;
+      color: white;
+      border-color: #007BFF;
+    }
+  </style>
 </head>
 <body>
 
@@ -106,9 +132,23 @@
     }
 
     function filterCategory(category) {
-      currentCategory = category;
-      applyFilters();
+  currentCategory = category;
+
+  // 모든 버튼에서 active 클래스 제거
+  document.querySelectorAll("#category-filter button").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  // 현재 클릭한 버튼에 active 클래스 추가
+  const buttons = document.querySelectorAll("#category-filter button");
+  buttons.forEach(btn => {
+    if (btn.textContent === category || (category === "ALL" && btn.textContent === "ALL")) {
+      btn.classList.add("active");
     }
+  });
+
+  applyFilters();
+}
 
     document.getElementById('search').addEventListener('input', applyFilters);
   </script>
