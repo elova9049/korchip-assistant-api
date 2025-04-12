@@ -1,4 +1,8 @@
-const { Configuration, OpenAIApi } = require("openai");
+const OpenAI = require("openai");
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
 
 module.exports = async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -15,14 +19,8 @@ module.exports = async function handler(req, res) {
 
   const { message } = req.body;
 
-  const configuration = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY,
-  });
-
-  const openai = new OpenAIApi(configuration);
-
   try {
-    const response = await openai.createChatCompletion({
+    const chatCompletion = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: [
         { role: "system", content: "You are Korchip Assistant, helpful bot for supercapacitors." },
@@ -30,7 +28,7 @@ module.exports = async function handler(req, res) {
       ],
     });
 
-    res.status(200).json({ reply: response.data.choices[0].message.content });
+    res.status(200).json({ reply: chatCompletion.choices[0].message.content });
   } catch (error) {
     console.error("❌ OpenAI Error:", error.message);
     res.status(500).json({ error: "Failed to get response", detail: error.message });
