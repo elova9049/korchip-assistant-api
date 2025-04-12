@@ -1,4 +1,3 @@
-// ✅ 바꿔야 할 코드
 const { Configuration, OpenAIApi } = require("openai");
 
 module.exports = async function handler(req, res) {
