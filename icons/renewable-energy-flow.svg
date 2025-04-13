@@ -1,0 +1,9 @@
+<svg viewBox="0 0 420 160" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+  <style>.box{fill:#e0f7fa;stroke:#00bcd4;stroke-width:2}.text{font-family:Arial;font-size:12px;fill:#333}.arrow{marker-end:url(#arrow);stroke:#00bcd4;stroke-width:2}</style>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#00bcd4"/></marker></defs>
+  <rect class="box" x="10" y="30" width="110" height="30"/><text class="text" x="20" y="50">Solar / Wind</text>
+  <line class="arrow" x1="120" y1="45" x2="150" y2="45"/>
+  <rect class="box" x="150" y="30" width="110" height="30"/><text class="text" x="160" y="50">Supercapacitor</text>
+  <line class="arrow" x1="260" y1="45" x2="290" y2="45"/>
+  <rect class="box" x="290" y="30" width="110" height="30"/><text class="text" x="300" y="50">Grid Support</text>
+</svg>
