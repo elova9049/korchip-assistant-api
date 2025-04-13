@@ -1,9 +1,45 @@
-<svg viewBox="0 0 420 160" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
-  <style>.box{fill:#e8f5e9;stroke:#43a047;stroke-width:2}.text{font-family:Arial;font-size:12px;fill:#333}.arrow{marker-end:url(#arrow);stroke:#43a047;stroke-width:2}</style>
-  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#43a047"/></marker></defs>
-  <rect class="box" x="10" y="30" width="110" height="30"/><text class="text" x="20" y="50">Vehicle ECU</text>
-  <line class="arrow" x1="120" y1="45" x2="150" y2="45"/>
-  <rect class="box" x="150" y="30" width="110" height="30"/><text class="text" x="160" y="50">Supercapacitor</text>
-  <line class="arrow" x1="260" y1="45" x2="290" y2="45"/>
-  <rect class="box" x="290" y="30" width="120" height="30"/><text class="text" x="300" y="50">Stabilization & Crank</text>
+<svg viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .box {
+      fill: #e8f5e9;
+      stroke: #388e3c;
+      stroke-width: 2;
+      rx: 10;
+      ry: 10;
+    }
+    .text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      fill: #333;
+    }
+    .arrow {
+      stroke: #388e3c;
+      stroke-width: 2;
+      marker-end: url(#arrowhead);
+    }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#388e3c" />
+    </marker>
+  </defs>
+
+  <!-- Box 1: ECU -->
+  <rect class="box" x="20" y="50" width="130" height="40" rx="10" ry="10"/>
+  <text class="text" x="35" y="75">Vehicle ECU</text>
+
+  <!-- Arrow 1 -->
+  <line class="arrow" x1="150" y1="70" x2="190" y2="70" />
+
+  <!-- Box 2: Supercapacitor -->
+  <rect class="box" x="190" y="50" width="180" height="40" rx="10" ry="10"/>
+  <text class="text" x="205" y="75">Supercapacitor Module</text>
+
+  <!-- Arrow 2 -->
+  <line class="arrow" x1="370" y1="70" x2="410" y2="70" />
+
+  <!-- Box 3: Stabilization -->
+  <rect class="box" x="410" y="50" width="160" height="40" rx="10" ry="10"/>
+  <text class="text" x="425" y="75">Power Stabilization / Crank</text>
 </svg>
