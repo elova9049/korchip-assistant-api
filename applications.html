@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Applications | Korchip</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .application-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 60px auto 80px;
+      padding: 0 20px;
+    }
+
+    .application-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      padding: 24px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .application-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .application-card img {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 16px;
+    }
+
+    .application-card h3 {
+      font-size: 18px;
+      color: #007BFF;
+      margin-bottom: 10px;
+    }
+
+    .application-card p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 60px;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 공통 헤더 -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <h1>Applications of Supercapacitors</h1>
+
+    <section class="application-grid">
+      <div class="application-card">
+        <img src="icons/iot.svg" alt="IoT Devices" />
+        <h3>IoT Devices</h3>
+        <p>Instant power backup for sensors, RTC modules, and stable data communication.</p>
+      </div>
+      <div class="application-card">
+        <img src="icons/smartmeter.svg" alt="Smart Meters" />
+        <h3>Smart Meters</h3>
+        <p>Supports energy harvesting and retains data during power fluctuations.</p>
+      </div>
+      <div class="application-card">
+        <img src="icons/industrial.svg" alt="Industrial Equipment" />
+        <h3>Industrial Equipment</h3>
+        <p>Backup power during outages, ensuring continuous operation of systems.</p>
+      </div>
+      <div class="application-card">
+        <img src="icons/medical.svg" alt="Medical Devices" />
+        <h3>Medical Devices</h3>
+        <p>Short-term emergency power for critical medical applications.</p>
+      </div>
+      <div class="application-card">
+        <img src="icons/automotive.svg" alt="Automotive" />
+        <h3>Automotive</h3>
+        <p>Used in start-stop systems and for stabilizing onboard power.</p>
+      </div>
+      <div class="application-card">
+        <img src="icons/consumer.svg" alt="Consumer Electronics" />
+        <h3>Consumer Electronics</h3>
+        <p>Provides clock and memory backup in everyday electronics.</p>
+      </div>
+      <div class="application-card">
+        <img src="icons/renewable.svg" alt="Renewable Energy" />
+        <h3>Renewable Energy</h3>
+        <p>Supports storage and power smoothing in solar and wind systems.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- 공통 푸터 -->
+  <div id="footer-placeholder"></div>
+
+  <!-- 헤더/푸터 불러오기 -->
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('header-placeholder').innerHTML = data);
+
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+  </script>
+
+</body>
+</html>
