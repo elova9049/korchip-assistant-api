@@ -1,54 +1,61 @@
-<svg viewBox="0 0 700 180" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 880 240" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="boxGradient" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#e8f5e9"/>
-      <stop offset="100%" stop-color="#c8e6c9"/>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f1f8e9"/>
+      <stop offset="100%" stop-color="#c5e1a5"/>
     </linearGradient>
     <filter id="shadow" x="0" y="0" width="150%" height="150%">
-      <feDropShadow dx="2" dy="2" stdDeviation="4" flood-color="#aaa" />
+      <feDropShadow dx="2" dy="2" stdDeviation="4" flood-color="#999"/>
     </filter>
-    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="6" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#388e3c" />
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#388e3c"/>
     </marker>
   </defs>
 
   <style>
     .box {
-      fill: url(#boxGradient);
+      fill: url(#grad);
       stroke: #388e3c;
       stroke-width: 2;
       filter: url(#shadow);
-      rx: 10;
-      ry: 10;
+      rx: 12; ry: 12;
     }
-    .text {
+    .label {
       font-family: 'Poppins', sans-serif;
-      font-size: 13px;
+      font-size: 16px;
       fill: #2e7d32;
-      font-weight: 500;
+      font-weight: 600;
+      text-anchor: middle;
+    }
+    .subtext {
+      font-size: 13px;
+      fill: #555;
     }
     .arrow {
       stroke: #388e3c;
       stroke-width: 2;
-      marker-end: url(#arrowhead);
+      marker-end: url(#arrow);
     }
   </style>
 
-  <!-- Box 1 -->
-  <rect class="box" x="30" y="60" width="150" height="50"/>
-  <text class="text" x="55" y="90">🚗 Vehicle ECU</text>
+  <!-- ECU -->
+  <rect class="box" x="30" y="70" width="220" height="90" />
+  <text class="label" x="140" y="105">🚗 Vehicle ECU</text>
+  <text class="label subtext" x="140" y="130">Controls energy logic</text>
 
-  <!-- Arrow -->
-  <line class="arrow" x1="180" y1="85" x2="230" y2="85" />
+  <!-- Arrow 1 -->
+  <line class="arrow" x1="250" y1="115" x2="300" y2="115"/>
 
-  <!-- Box 2 -->
-  <rect class="box" x="230" y="60" width="200" height="50"/>
-  <text class="text" x="255" y="90">🔋 Supercapacitor Module</text>
+  <!-- Supercapacitor -->
+  <rect class="box" x="300" y="70" width="240" height="90" />
+  <text class="label" x="420" y="105">🔋 Supercapacitor Module</text>
+  <text class="label subtext" x="420" y="130">Stores burst energy for crank</text>
 
-  <!-- Arrow -->
-  <line class="arrow" x1="430" y1="85" x2="480" y2="85" />
+  <!-- Arrow 2 -->
+  <line class="arrow" x1="540" y1="115" x2="590" y2="115"/>
 
-  <!-- Box 3 -->
-  <rect class="box" x="480" y="60" width="180" height="50"/>
-  <text class="text" x="495" y="90">⚡ Power Stabilization / Crank</text>
+  <!-- Stabilization -->
+  <rect class="box" x="590" y="70" width="240" height="90" />
+  <text class="label" x="710" y="105">⚙️ Power Stabilization</text>
+  <text class="label subtext" x="710" y="130">Delivers smooth current to starter</text>
 </svg>
