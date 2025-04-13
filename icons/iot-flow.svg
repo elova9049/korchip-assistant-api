@@ -4,12 +4,12 @@
       fill: #ffffff;
       stroke: #ccc;
       stroke-width: 1.5;
-      rx: 20;
-      ry: 20;
+      rx: 12;
+      ry: 12;
     }
     .label {
-      font-family: 'Noto Sans JP', 'Helvetica Neue', sans-serif;
-      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
       fill: #333;
       text-anchor: middle;
       dominant-baseline: middle;
@@ -29,20 +29,28 @@
   </defs>
 
   <!-- Box 1 -->
-  <rect class="box" x="30" y="80" width="180" height="40"/>
-  <text class="label" x="120" y="100">IoT Sensor / RTC</text>
+  <rect class="box" x="30" y="60" width="160" height="60" />
+  <text class="label" x="110" y="80">
+    <tspan x="110" dy="0">IoT Sensor</tspan>
+    <tspan x="110" dy="1.4em">/ MCU</tspan>
+  </text>
 
-  <!-- Arrow 1 -->
-  <path class="arrow" d="M210,100 C220,100 220,100 240,100" />
+  <!-- Arrow -->
+  <path class="arrow" d="M190,90 C200,90 200,90 210,90" />
 
   <!-- Box 2 -->
-  <rect class="box" x="240" y="80" width="200" height="40"/>
-  <text class="label" x="340" y="100">Supercapacitor (Backup)</text>
+  <rect class="box" x="210" y="60" width="160" height="60" />
+  <text class="label" x="290" y="80">
+    <tspan x="290" dy="0">Supercapacitor</tspan>
+  </text>
 
-  <!-- Arrow 2 -->
-  <path class="arrow" d="M440,100 C460,100 460,100 480,100" />
+  <!-- Arrow -->
+  <path class="arrow" d="M370,90 C380,90 380,90 390,90" />
 
   <!-- Box 3 -->
-  <rect class="box" x="480" y="80" width="180" height="40"/>
-  <text class="label" x="570" y="100">Microcontroller Unit</text>
+  <rect class="box" x="390" y="50" width="220" height="80" />
+  <text class="label" x="500" y="80">
+    <tspan x="500" dy="0">Backup Power for</tspan>
+    <tspan x="500" dy="1.4em">RTC & Transmission</tspan>
+  </text>
 </svg>
