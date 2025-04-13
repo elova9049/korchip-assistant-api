@@ -22,7 +22,7 @@
       padding: 24px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
       text-align: center;
-      cursor: pointer;
+      cursor: default;
       transition: transform 0.2s ease;
     }
 
@@ -43,21 +43,6 @@
       margin-bottom: 10px;
     }
 
-    .flow-container {
-      max-width: 800px;
-      margin: 0 auto 80px;
-      padding: 0 20px;
-      text-align: center;
-    }
-
-    #flowchart-img {
-      width: 100%;
-      max-width: 1200px;
-      border-radius: 12px;
-      margin-top: 30px;
-      display: none;
-    }
-
     h1 {
       text-align: center;
       margin: 60px 0 20px;
@@ -75,46 +60,42 @@
     <h1>Supercapacitor Applications</h1>
 
     <section class="menu">
-      <div class="card" onclick="showFlow('iot')">
+      <div class="card">
         <img src="icons/iot.svg" alt="IoT Devices" />
         <div class="card-title">IoT Devices</div>
         <p>Instant power backup, RTC modules</p>
       </div>
-      <div class="card" onclick="showFlow('smart-meter')">
+      <div class="card">
         <img src="icons/smartmeter.svg" alt="Smart Meters" />
         <div class="card-title">Smart Meters</div>
         <p>Energy harvesting, data retention</p>
       </div>
-      <div class="card" onclick="showFlow('industrial')">
+      <div class="card">
         <img src="icons/industrial.svg" alt="Industrial Equipment" />
         <div class="card-title">Industrial Equipment</div>
         <p>Backup during power loss</p>
       </div>
-      <div class="card" onclick="showFlow('medical')">
+      <div class="card">
         <img src="icons/medical.svg" alt="Medical Devices" />
         <div class="card-title">Medical Devices</div>
         <p>Short-term emergency power</p>
       </div>
-      <div class="card" onclick="showFlow('automotive')">
+      <div class="card">
         <img src="icons/automotive.svg" alt="Automotive" />
         <div class="card-title">Automotive</div>
         <p>Power stabilization, start-stop systems</p>
       </div>
-      <div class="card" onclick="showFlow('consumer-electronics')">
+      <div class="card">
         <img src="icons/consumer.svg" alt="Consumer Electronics" />
         <div class="card-title">Consumer Electronics</div>
         <p>Clock, memory backup</p>
       </div>
-      <div class="card" onclick="showFlow('renewable-energy')">
+      <div class="card">
         <img src="icons/renewable.svg" alt="Renewable Energy" />
         <div class="card-title">Renewable Energy</div>
         <p>Solar & wind system support</p>
       </div>
     </section>
-
-    <div class="flow-container">
-      <img id="flowchart-img" src="" alt="Application Flowchart" />
-    </div>
   </main>
 
   <!-- 공통 푸터 -->
@@ -129,25 +110,6 @@
     fetch('footer.html')
       .then(res => res.text())
       .then(data => document.getElementById('footer-placeholder').innerHTML = data);
-  </script>
-
-  <!-- 이미지 바꾸는 스크립트 -->
-  <script>
-    function showFlow(type) {
-      const map = {
-        'iot': 'icons/iot-flow.svg',
-        'smart-meter': 'icons/smart-meter-flow.svg',
-        'industrial': 'icons/industrial-flow.svg',
-        'medical': 'icons/medical-flow.svg',
-        'automotive': 'icons/automotive-flow.svg',
-        'consumer-electronics': 'icons/consumer-electronics-flow.svg',
-        'renewable-energy': 'icons/renewable-energy-flow.svg'
-      };
-
-      const img = document.getElementById('flowchart-img');
-      img.src = map[type];
-      img.style.display = 'block';
-    }
   </script>
 </body>
 </html>
