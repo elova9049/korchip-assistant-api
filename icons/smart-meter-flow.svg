@@ -1,51 +1,55 @@
-<svg viewBox="0 0 720 180" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg">
   <style>
     .box {
-      fill: #e6f0ff;
-      stroke: #007BFF;
-      stroke-width: 2;
-      rx: 8;
+      fill: #ffffff;
+      stroke: #ccc;
+      stroke-width: 1.5;
+      rx: 20;
+      ry: 20;
     }
     .label {
-      font-family: 'Poppins', sans-serif;
-      font-size: 14px;
-      fill: #222;
+      font-family: 'Noto Sans JP', 'Helvetica Neue', sans-serif;
+      font-size: 16px;
+      fill: #333;
+      text-anchor: middle;
+      dominant-baseline: middle;
     }
     .arrow {
-      stroke: #007BFF;
-      stroke-width: 2;
+      fill: none;
+      stroke: #aaa;
+      stroke-width: 1.5;
       marker-end: url(#arrowhead);
     }
   </style>
 
   <defs>
-    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="5" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#007BFF" />
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8" fill="#aaa"/>
     </marker>
   </defs>
 
-  <!-- Step 1 -->
-  <rect class="box" x="20" y="60" width="160" height="50" rx="10" ry="10" />
-  <text class="label" x="40" y="90">Energy Harvesting</text>
+  <!-- Box 1 -->
+  <rect class="box" x="30" y="80" width="160" height="40"/>
+  <text class="label" x="110" y="100">Energy Input</text>
 
   <!-- Arrow 1 -->
-  <line class="arrow" x1="180" y1="85" x2="220" y2="85" />
+  <path class="arrow" d="M190,100 C200,100 200,100 210,100" />
 
-  <!-- Step 2 -->
-  <rect class="box" x="220" y="60" width="200" height="50" rx="10" ry="10" />
-  <text class="label" x="235" y="90">Supercapacitor Charging & Storage</text>
+  <!-- Box 2 -->
+  <rect class="box" x="210" y="80" width="180" height="40"/>
+  <text class="label" x="300" y="100">Energy Harvester</text>
 
   <!-- Arrow 2 -->
-  <line class="arrow" x1="420" y1="85" x2="460" y2="85" />
+  <path class="arrow" d="M390,100 C400,100 400,100 410,100" />
 
-  <!-- Step 3 -->
-  <rect class="box" x="460" y="60" width="180" height="50" rx="10" ry="10" />
-  <text class="label" x="475" y="90">Data Transmission Support</text>
+  <!-- Box 3 -->
+  <rect class="box" x="410" y="80" width="140" height="40"/>
+  <text class="label" x="480" y="100">Supercapacitor</text>
 
   <!-- Arrow 3 -->
-  <line class="arrow" x1="640" y1="85" x2="680" y2="85" />
+  <path class="arrow" d="M550,100 C560,100 560,100 570,100" />
 
-  <!-- Step 4 -->
-  <rect class="box" x="680" y="60" width="80" height="50" rx="10" ry="10" />
-  <text class="label" x="700" y="90">Cloud</text>
+  <!-- Box 4 -->
+  <rect class="box" x="570" y="80" width="120" height="40"/>
+  <text class="label" x="630" y="100">Data Backup</text>
 </svg>
