@@ -7,50 +7,60 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    .application-grid {
+    .menu {
+      max-width: 1000px;
+      margin: 40px auto 60px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 24px;
-      max-width: 1200px;
-      margin: 60px auto 80px;
       padding: 0 20px;
     }
 
-    .application-card {
-      background: white;
+    .card {
+      background-color: white;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
       padding: 24px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
       text-align: center;
+      cursor: pointer;
       transition: transform 0.2s ease;
     }
 
-    .application-card:hover {
+    .card:hover {
       transform: translateY(-5px);
     }
 
-    .application-card img {
-      width: 64px;
-      height: 64px;
-      margin-bottom: 16px;
+    .card img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 12px;
     }
 
-    .application-card h3 {
+    .card-title {
       font-size: 18px;
+      font-weight: 600;
       color: #007BFF;
       margin-bottom: 10px;
     }
 
-    .application-card p {
-      font-size: 14px;
-      color: #555;
-      line-height: 1.6;
+    .flow-container {
+      max-width: 800px;
+      margin: 0 auto 80px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    #flowchart-img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 12px;
+      margin-top: 30px;
+      display: none;
     }
 
     h1 {
       text-align: center;
-      margin-top: 60px;
-      margin-bottom: 30px;
+      margin: 60px 0 20px;
       font-size: 28px;
     }
   </style>
@@ -60,46 +70,51 @@
   <!-- 공통 헤더 -->
   <div id="header-placeholder"></div>
 
+  <!-- 본문 -->
   <main>
-    <h1>Applications of Supercapacitors</h1>
+    <h1>Supercapacitor Applications</h1>
 
-    <section class="application-grid">
-      <div class="application-card">
+    <section class="menu">
+      <div class="card" onclick="showFlow('iot')">
         <img src="icons/iot.svg" alt="IoT Devices" />
-        <h3>IoT Devices</h3>
-        <p>Instant power backup for sensors, RTC modules, and stable data communication.</p>
+        <div class="card-title">IoT Devices</div>
+        <p>Instant power backup, RTC modules</p>
       </div>
-      <div class="application-card">
-        <img src="icons/smartmeter.svg" alt="Smart Meters" />
-        <h3>Smart Meters</h3>
-        <p>Supports energy harvesting and retains data during power fluctuations.</p>
+      <div class="card" onclick="showFlow('smart-meter')">
+        <img src="icons/smart-meter.svg" alt="Smart Meters" />
+        <div class="card-title">Smart Meters</div>
+        <p>Energy harvesting, data retention</p>
       </div>
-      <div class="application-card">
+      <div class="card" onclick="showFlow('industrial')">
         <img src="icons/industrial.svg" alt="Industrial Equipment" />
-        <h3>Industrial Equipment</h3>
-        <p>Backup power during outages, ensuring continuous operation of systems.</p>
+        <div class="card-title">Industrial Equipment</div>
+        <p>Backup during power loss</p>
       </div>
-      <div class="application-card">
+      <div class="card" onclick="showFlow('medical')">
         <img src="icons/medical.svg" alt="Medical Devices" />
-        <h3>Medical Devices</h3>
-        <p>Short-term emergency power for critical medical applications.</p>
+        <div class="card-title">Medical Devices</div>
+        <p>Short-term emergency power</p>
       </div>
-      <div class="application-card">
+      <div class="card" onclick="showFlow('automotive')">
         <img src="icons/automotive.svg" alt="Automotive" />
-        <h3>Automotive</h3>
-        <p>Used in start-stop systems and for stabilizing onboard power.</p>
+        <div class="card-title">Automotive</div>
+        <p>Power stabilization, start-stop systems</p>
       </div>
-      <div class="application-card">
-        <img src="icons/consumer.svg" alt="Consumer Electronics" />
-        <h3>Consumer Electronics</h3>
-        <p>Provides clock and memory backup in everyday electronics.</p>
+      <div class="card" onclick="showFlow('consumer-electronics')">
+        <img src="icons/consumer-electronics.svg" alt="Consumer Electronics" />
+        <div class="card-title">Consumer Electronics</div>
+        <p>Clock, memory backup</p>
       </div>
-      <div class="application-card">
-        <img src="icons/renewable.svg" alt="Renewable Energy" />
-        <h3>Renewable Energy</h3>
-        <p>Supports storage and power smoothing in solar and wind systems.</p>
+      <div class="card" onclick="showFlow('renewable-energy')">
+        <img src="icons/renewable-energy.svg" alt="Renewable Energy" />
+        <div class="card-title">Renewable Energy</div>
+        <p>Solar & wind system support</p>
       </div>
     </section>
+
+    <div class="flow-container">
+      <img id="flowchart-img" src="" alt="Application Flowchart" />
+    </div>
   </main>
 
   <!-- 공통 푸터 -->
@@ -116,5 +131,23 @@
       .then(data => document.getElementById('footer-placeholder').innerHTML = data);
   </script>
 
+  <!-- 이미지 바꾸는 스크립트 -->
+  <script>
+    function showFlow(type) {
+      const map = {
+        'iot': 'icons/iot-flow.svg',
+        'smart-meter': 'icons/smart-meter-flow.svg',
+        'industrial': 'icons/industrial-flow.svg',
+        'medical': 'icons/medical-flow.svg',
+        'automotive': 'icons/automotive-flow.svg',
+        'consumer-electronics': 'icons/consumer-electronics-flow.svg',
+        'renewable-energy': 'icons/renewable-energy-flow.svg'
+      };
+
+      const img = document.getElementById('flowchart-img');
+      img.src = map[type];
+      img.style.display = 'block';
+    }
+  </script>
 </body>
 </html>
