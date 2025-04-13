@@ -12,6 +12,7 @@
       font-size: 14px;
       fill: #333;
       text-anchor: middle;
+      dominant-baseline: middle;
     }
     .arrow {
       fill: none;
@@ -29,22 +30,26 @@
 
   <!-- Box 1 -->
   <rect class="box" x="30" y="60" width="140" height="60" />
-  <text class="label" x="100" y="85">Vehicle<br/>ECU</text>
+  <text class="label" x="100" y="85">
+    <tspan x="100" dy="0">Vehicle ECU</tspan>
+  </text>
 
   <!-- Arrow 1 -->
   <path class="arrow" d="M170,90 C180,90 180,90 190,90" />
 
   <!-- Box 2 -->
   <rect class="box" x="190" y="60" width="160" height="60" />
-  <text class="label" x="270" y="85">Supercapacitor</text>
+  <text class="label" x="270" y="85">
+    <tspan x="270" dy="0">Supercapacitor</tspan>
+  </text>
 
   <!-- Arrow 2 -->
   <path class="arrow" d="M350,90 C360,90 360,90 370,90" />
 
   <!-- Box 3 -->
-  <rect class="box" x="370" y="60" width="180" height="60" />
-  <text class="label" x="460" y="80">
-    <tspan x="460" dy="0">Power Stabilization</tspan>
-    <tspan x="460" dy="1.4em">and Crank Assist</tspan>
+  <rect class="box" x="370" y="55" width="200" height="70" />
+  <text class="label" x="470" y="80">
+    <tspan x="470" dy="0">Power Stabilization</tspan>
+    <tspan x="470" dy="1.4em">and Crank Assist</tspan>
   </text>
 </svg>
