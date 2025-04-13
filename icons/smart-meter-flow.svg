@@ -1,44 +1,51 @@
-<svg viewBox="0 0 700 180" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 720 180" xmlns="http://www.w3.org/2000/svg">
   <style>
     .box {
-      fill: #f0f8ff;
+      fill: #e6f0ff;
       stroke: #007BFF;
       stroke-width: 2;
-      rx: 10;
+      rx: 8;
     }
-    .text {
+    .label {
       font-family: 'Poppins', sans-serif;
       font-size: 14px;
       fill: #222;
     }
     .arrow {
-      marker-end: url(#arrowhead);
       stroke: #007BFF;
       stroke-width: 2;
+      marker-end: url(#arrowhead);
     }
   </style>
+
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="5" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#007BFF"/>
+      <polygon points="0 0, 10 3.5, 0 7" fill="#007BFF" />
     </marker>
   </defs>
 
-  <!-- Boxes -->
-  <rect class="box" x="20" y="60" width="160" height="40"/>
-  <text class="text" x="32" y="85">Energy Harvesting</text>
+  <!-- Step 1 -->
+  <rect class="box" x="20" y="60" width="160" height="50" rx="10" ry="10" />
+  <text class="label" x="40" y="90">Energy Harvesting</text>
 
-  <line class="arrow" x1="180" y1="80" x2="210" y2="80"/>
+  <!-- Arrow 1 -->
+  <line class="arrow" x1="180" y1="85" x2="220" y2="85" />
 
-  <rect class="box" x="210" y="60" width="180" height="40"/>
-  <text class="text" x="222" y="85">Supercapacitor Charging & Storage</text>
+  <!-- Step 2 -->
+  <rect class="box" x="220" y="60" width="200" height="50" rx="10" ry="10" />
+  <text class="label" x="235" y="90">Supercapacitor Charging & Storage</text>
 
-  <line class="arrow" x1="390" y1="80" x2="420" y2="80"/>
+  <!-- Arrow 2 -->
+  <line class="arrow" x1="420" y1="85" x2="460" y2="85" />
 
-  <rect class="box" x="420" y="60" width="170" height="40"/>
-  <text class="text" x="430" y="85">Data Transmission Support</text>
+  <!-- Step 3 -->
+  <rect class="box" x="460" y="60" width="180" height="50" rx="10" ry="10" />
+  <text class="label" x="475" y="90">Data Transmission Support</text>
 
-  <line class="arrow" x1="590" y1="80" x2="620" y2="80"/>
+  <!-- Arrow 3 -->
+  <line class="arrow" x1="640" y1="85" x2="680" y2="85" />
 
-  <rect class="box" x="620" y="60" width="60" height="40"/>
-  <text class="text" x="630" y="85">Cloud</text>
+  <!-- Step 4 -->
+  <rect class="box" x="680" y="60" width="80" height="50" rx="10" ry="10" />
+  <text class="label" x="700" y="90">Cloud</text>
 </svg>
